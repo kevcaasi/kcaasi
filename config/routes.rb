@@ -1,4 +1,6 @@
 Kcaasi::Application.routes.draw do
+  resources :articles
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
