@@ -1,16 +1,12 @@
+<%= stylesheet_link_tag "articles" %>
+<%= link_to 'New Article', new_article_path %>
 <h1>Listing articles</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Created</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @articles.each do |article| %>
+  
+<% if false %>
   <tr>
     <td><%= article.title %></td>
     <td><%= article.content %></td>
@@ -19,9 +15,24 @@
     <td><%= link_to 'Edit', edit_article_path(article) %></td>
     <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+<%end%>
+  
+  
+  
+<ul class="thumbnails">
+  <li class="span4">
+    <div class="thumbnail">
+      <img src="http://placehold.it/300x200" alt="">
+      <h3><%= article.title %></h3>
+      <p><%= article.content %></p>
+    </div>
+  </li>
+</ul>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Article', new_article_path %>
+
+
+
